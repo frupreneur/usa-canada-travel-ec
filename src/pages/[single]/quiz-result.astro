@@ -11,6 +11,7 @@ const r = Astro.url.searchParams.get('r')! || '';
 const t = x.questions.length
 const result = +r / t
 const filteredData = data.filter(q=> q.route != id)
+console.log(result)
 ---
 <Layout title={x.title}, description={x.description} >
 	<>
