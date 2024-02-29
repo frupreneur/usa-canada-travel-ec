@@ -26,7 +26,7 @@ console.log(result)
         </div>    
         <div>
           {(result < 0.5) && <p class="hidden text-primary" id="result">{x.low}</p>}
-          {(result > 0.5) && <p class="hidden text-primary" id="result">{x.high}</p>}
+          {(result >= 0.5) && <p class="hidden text-primary" id="result">{x.high}</p>}
         </div>
         <ADX id="ad2"/>
         <Related filteredData={filteredData}/>
