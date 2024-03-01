@@ -60,7 +60,7 @@ const { title="U.S.A Canada Travel", description="Embark on an unforgettable cro
 			<Header />
             <div class="site-wrap prose" id="site-wrap prose lg:prose-xl">
             	<slot />
-              <AdSense />
+              <AdSense id="3"/>
             </div>
 			<Footer/>
 		</main>
@@ -100,6 +100,38 @@ setTimeout(async function(){
 </script> -->
 
 <!-- <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script> -->
+
+
+<script>
+  // console.log("Ad by Google")
+
+
+// async function displayAd(){
+
+//     /* @ts-ignore */   
+//     try {
+//       
+//     } catch (error) {
+//         console.log(error)
+//     }
+ 
+// }
+
+
+// displayAd()
+
+
+
+
+
+setTimeout( function(){
+  for (let index = 0; index < 3; index++) {
+     /* @ts-ignore */   
+     (adsbygoogle = window.adsbygoogle || []).push({});
+  }
+}, 2000)
+</script>
+
 
 
 
