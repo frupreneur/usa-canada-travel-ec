@@ -2,12 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import data from '../../db/visa'
 import QuizCard from "../components/QuizCard.astro"
-import AdSense from '../components/AdSense.astro';
+// import AdSense from '../components/AdSense.astro';
+import ADX from '../components/ADX.astro';
 
 ---
 <Layout>
 	<>
-	<AdSense />
+	<ADX id="ad1" />
   {data.map(x=><QuizCard x={x} />)}
 	</>
 </Layout>

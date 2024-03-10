@@ -1,7 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import AdSense from '../components/AdSense.astro';
+// import AdSense from '../components/AdSense.astro';
+import ADX from '../components/ADX.astro';
 interface Props {
 	title?: string;
   description?: string;
@@ -33,6 +34,7 @@ const { title="U.S.A Canada Travel", description="Embark on an unforgettable cro
     <meta name="twitter:title" content={title}>
     <meta name="twitter:description" content={description}>
     <meta name="twitter:image" content={`https://${url}/assets/og.png`}>
+    
    
 
     <script>
@@ -58,7 +60,7 @@ const { title="U.S.A Canada Travel", description="Embark on an unforgettable cro
 			<Header />
             <div class="site-wrap prose" id="site-wrap prose lg:prose-xl">
             	<slot />
-              <AdSense />
+              <ADX id="footer" />
             </div>
 			<Footer/>
 		</main>
@@ -66,7 +68,7 @@ const { title="U.S.A Canada Travel", description="Embark on an unforgettable cro
 	</body>
 </html>
 
-<script>
+<!-- <script>
   setTimeout( async function(){
     for (let index = 0; index < 3; index++) {
 
@@ -78,10 +80,56 @@ const { title="U.S.A Canada Travel", description="Embark on an unforgettable cro
       }
     }
   }, 2000)
-</script>
+</script> -->
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4562433335749182"
-     crossorigin="anonymous"></script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4562433335749182"
+     crossorigin="anonymous"></script> -->
+
+
+     <script> 
+       // @ts-ignore
+       window.googletag = window.googletag || {cmd: []};
+       // @ts-ignore
+       googletag.cmd.push(function() {
+         // @ts-ignore
+         googletag.defineSlot('/22476809480/englishcompositions.com', [[120, 600], [200, 200], [250, 250], [336, 280], [200, 446], [250, 360], [320, 480], [480, 320], [160, 600], [300, 250], [300, 600], [240, 400]], 'footer').addService(googletag.pubads());
+         // @ts-ignore
+         googletag.defineSlot('/22476809480/englishcompositions.com/ENGcomp_Content1', [[200, 446], [240, 400], [250, 360], [480, 320], [160, 600], [300, 600], [200, 200], [300, 250], [320, 480], [120, 600], [250, 250], [336, 280]], 'ad1').addService(googletag.pubads());
+         // @ts-ignore
+         googletag.defineSlot('/22476809480/englishcompositions.com/ENGcomp_Content2', [[160, 600], [300, 250], [480, 320], [300, 600], [200, 446], [240, 400], [250, 250], [336, 280], [200, 200], [320, 480], [120, 600], [250, 360]], 'ad2').addService(googletag.pubads());
+    
+     
+     
+         // @ts-ignore
+         googletag.pubads().enableSingleRequest();
+         // @ts-ignore
+         googletag.enableServices();
+       });
+     
+       const adUnits = ['footer', 'ad1', 'ad2']
+     
+       setTimeout(async function() {
+         adUnits.forEach((x,i)=>{
+           try {
+          // @ts-ignore
+           googletag.cmd.push(function() { googletag.display(x); });
+           console.log(`loaded ad ${x}`)
+     
+           } catch (error) {
+             console.log(error)
+             
+           }
+         
+         })
+       }, 500 )
+     </script>
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script> 
+
+
+
+
+
 
 
 <style is:global>
