@@ -1,6 +1,11 @@
 import { defineMiddleware } from "astro/middleware";
 
 const INDEX_PATH = "/canada-work-visa-requirements";
+
+const pathsToAddQuery = [
+	"/canada-work-visa-requirements",
+	"/canada-job-visa-requirements",
+];
 const queryArr = [
 	"jobs-you-can-get-with-a-degree-in-healthcare-administration",
 	"job-benefits-in-canada",
@@ -123,27 +128,42 @@ export const onRequest = defineMiddleware((context, next) => {
 	 * The middleware runs every time a page or endpoint is about to be rendered.
 	 * Only redirect if this is the home page
 	 */
-	if (context.url.href.length === (context.url.origin + INDEX_PATH).length) {
-		/**
-		 * Construct a full URL by passing `context.url` as the base URL
-		 */
 
-		// Return the element at the random index
-		const randomIndex = Math.floor(Math.random() * queryArr.length);
+	/**
+	 * Construct a full URL by passing `context.url` as the base URL
+	 */
 
+	// Return the element at the random index
+	const randomIndex = Math.floor(Math.random() * queryArr.length);
+	let redirectURL = "";
+
+	pathsToAddQuery.forEach((x) => {
+		if (
+			context.url.pathname === x &&
+			context.url.href.length === (context.url.origin + x).length
+		) {
+			redirectURL = x;
+		}
+	});
+
+	if (redirectURL) {
+		console.log("Redirect: ", redirectURL);
 		return Response.redirect(
-			new URL(INDEX_PATH + `?canada-travel=${queryArr[randomIndex]}`, context.url),
+			new URL(
+				redirectURL + `?canada-travel=${queryArr[randomIndex]}`,
+				context.url
+			),
 			302
 		);
-
-		/**
-		 * You may also redirect using `context.redirect` as shown below:
-		 * =========================================
-		 * return context.redirect("/redirected", 302);
-		 * =========================================
-		 * Note that this only works in SSR mode
-		 */
 	}
+
+	/**
+	 * You may also redirect using `context.redirect` as shown below:
+	 * =========================================
+	 * return context.redirect("/redirected", 302);
+	 * =========================================
+	 * Note that this only works in SSR mode
+	 */
 
 	return next();
 });
