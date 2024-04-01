@@ -2,9 +2,11 @@ import { defineMiddleware } from "astro/middleware";
 
 const INDEX_PATH = "/canada-work-visa-requirements";
 
-const pathsToAddQuery = [
+const pathsToAdQuery = [
 	"/canada-work-visa-requirements",
 	"/canada-job-visa-requirements",
+	"/usa-work-visa-requirements",
+	// "/canada-immigrants-jobs-and-loans-visa-requirements",
 ];
 const queryArr = [
 	"jobs-you-can-get-with-a-degree-in-healthcare-administration",
@@ -137,20 +139,19 @@ export const onRequest = defineMiddleware((context, next) => {
 	const randomIndex = Math.floor(Math.random() * queryArr.length);
 	let redirectURL = "";
 
-	pathsToAddQuery.forEach((x) => {
+	pathsToAdQuery.forEach((x) => {
 		if (
-			context.url.pathname === x &&
-			context.url.href.length === (context.url.origin + x).length
+			context.url.pathname.slice(0, -1) === x &&
+			context.url.href.length - 1 === (context.url.origin + x).length
 		) {
 			redirectURL = x;
 		}
 	});
 
 	if (redirectURL) {
-		console.log("Redirect: ", redirectURL);
 		return Response.redirect(
 			new URL(
-				redirectURL + `?canada-travel=${queryArr[randomIndex]}`,
+				redirectURL + `/?travel-usa-canada=${queryArr[randomIndex]}`,
 				context.url
 			),
 			302

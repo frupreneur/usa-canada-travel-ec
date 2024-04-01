@@ -1,5 +1,77 @@
 const DATABASE = [
 	{
+		route: "canada-immigrants-jobs-and-loans-visa-requirements",
+		title: "Canada Immigrants Jobs and Loans: Visa Requirements",
+		description:
+			"Are you planning to work in Canada as an immigrant? This quiz will help you understand the visa requirements necessary for securing a job and loans.",
+		result: 0,
+		idx: 0,
+		high: "Based on your responses, it appears you may be well-prepared to pursue job opportunities and obtain loans as an immigrant in Canada. It's advisable to consult with relevant authorities or professionals to ensure you meet all requirements.",
+		low: "Your responses indicate that you may need further preparation before considering job opportunities and loans in Canada as an immigrant. Research thoroughly and seek guidance from immigration experts to understand and fulfill all necessary criteria.",
+		questions: [
+			{
+				question:
+					"Have you researched the visa requirements for immigrating and working in Canada?",
+				answers: ["Yes", "No", "Partially"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Do you possess the necessary qualifications and experience required for your desired job in Canada?",
+				answers: ["Yes", "No", "In Progress"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Have you explored the available job opportunities in Canada for immigrants?",
+				answers: ["Yes", "No", "Somewhat"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Are you aware of the financial requirements and options for immigrants, including loans?",
+				answers: ["Yes", "No", "Somewhat"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Have you considered the cost of living in Canada and its impact on your financial planning?",
+				answers: ["Yes", "No", "Partially"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Are you familiar with the process of obtaining loans as an immigrant in Canada?",
+				answers: ["Yes", "No", "Somewhat"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Have you assessed your eligibility for loans based on your financial situation?",
+				answers: ["Yes", "No", "In Progress"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Do you have a clear understanding of the responsibilities and obligations associated with loans in Canada?",
+				answers: ["Yes", "No", "Somewhat"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Have you consulted with immigration experts or advisors regarding your job and loan plans in Canada?",
+				answers: ["Yes", "No", "Planning to"],
+				correct: "Yes",
+			},
+			{
+				question:
+					"Are you prepared to meet all the necessary requirements and obligations as an immigrant seeking jobs and loans in Canada?",
+				answers: ["Yes", "No", "Getting There"],
+				correct: "Yes",
+			},
+		],
+	},
+	{
 		route: "usa-travel-visa-requirements",
 		title:
 			"U.S.A Travel Visa Requirements for Immigrants: Are You Ready for Jobs in USA?",
@@ -642,6 +714,5 @@ const DATABASE = [
 		],
 	},
 ];
-  
-  export default DATABASE;
-  
+
+export default DATABASE;
