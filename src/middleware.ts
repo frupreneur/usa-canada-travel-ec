@@ -6,7 +6,7 @@ const pathsToAdQuery = [
 	"/canada-work-visa-requirements",
 	"/canada-job-visa-requirements",
 	"/usa-work-visa-requirements",
-	// "/canada-immigrants-jobs-and-loans-visa-requirements",
+	"/canada-immigrants-jobs-and-loans-visa-requirements",
 ];
 const queryArr = [
 	"jobs-you-can-get-with-a-degree-in-healthcare-administration",
