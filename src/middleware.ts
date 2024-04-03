@@ -154,7 +154,7 @@ export const onRequest = defineMiddleware((context, next) => {
 				redirectURL + `/?travel-usa-canada=${queryArr[randomIndex]}`,
 				context.url
 			),
-			302
+			301
 		);
 	}
 
